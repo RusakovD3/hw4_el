@@ -3,7 +3,8 @@
 int addAbonent(struct abonent** abonents, int* abonentCount, int* capacity) {
     if (*abonentCount == *capacity) {
         int newCapacity = *capacity * 2;
-        struct abonent* temp = (struct abonent*)realloc(*abonents, newCapacity * sizeof(struct abonent));
+        struct abonent* temp = (struct abonent*)realloc(
+            *abonents, newCapacity * sizeof(struct abonent));
         if (!temp) {
             printf("Failed to allocate memory.\n");
             return FAIL;
@@ -69,7 +70,8 @@ int deleteAbonent(struct abonent** abonents, int* abonentCount, int* capacity) {
 
     if (*abonentCount > 0 && *abonentCount <= *capacity / 4) {
         *capacity /= 2;
-        struct abonent* temp = (struct abonent*)realloc(*abonents, (*capacity) * sizeof(struct abonent));
+        struct abonent* temp = (struct abonent*)realloc(
+            *abonents, (*capacity) * sizeof(struct abonent));
         if (!temp && *abonentCount > 0) {
             printf("Failed to reallocate memory, but data is still intact.\n");
             return FAIL;
@@ -93,20 +95,21 @@ int searchByName(struct abonent* abonents, int abonentCount) {
     printf("Matching abonents:\n");
     for (int i = 0; i < abonentCount; ++i) {
         if (strcmp(abonents[i].name, nameToSearch) == 0) {
-            printf("Name: %s, Second Name: %s, Telephone: %s\n", abonents[i].name, abonents[i].second_name, abonents[i].tel);
+            printf("Name: %s, Second Name: %s, Telephone: %s\n",
+                   abonents[i].name, abonents[i].second_name, abonents[i].tel);
             found = 1;
         }
     }
 
-    if (!found)
-        printf("No matching abonents found.\n");
-    
+    if (!found) printf("No matching abonents found.\n");
+
     return SUCCESS;
 }
 
 void displayAll(struct abonent* abonents, int abonentCount) {
     printf("All abonents:\n");
     for (int i = 0; i < abonentCount; ++i) {
-        printf("Name: %s, Second Name: %s, Telephone: %s\n", abonents[i].name, abonents[i].second_name, abonents[i].tel);
+        printf("Name: %s, Second Name: %s, Telephone: %s\n", abonents[i].name,
+               abonents[i].second_name, abonents[i].tel);
     }
 }

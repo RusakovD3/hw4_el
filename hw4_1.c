@@ -1,8 +1,8 @@
 #include "hw4_1.h"
 
-
 int main() {
-    struct abonent* abonents = (struct abonent*)malloc(INITIAL_CAPACITY * sizeof(struct abonent));
+    struct abonent* abonents =
+        (struct abonent*)malloc(INITIAL_CAPACITY * sizeof(struct abonent));
     int abonentCount = 0;
     int capacity = INITIAL_CAPACITY;
     int choice;

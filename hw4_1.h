@@ -1,9 +1,9 @@
 #ifndef ABONENTLIST_H
 #define ABONENTLIST_H
 
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define INITIAL_CAPACITY 10
 #define NAME_SIZE 10
