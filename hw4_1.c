@@ -50,5 +50,5 @@ int main() {
     free(abonents);
     printf("Memory freed successfully.\n");
 
-    return 0;
+    exit(EXIT_FAILURE);
 }
